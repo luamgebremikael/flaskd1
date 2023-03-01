@@ -1,0 +1,25 @@
+{% extends 'base.jinja' %}
+
+{%block content %}
+    <h2>Register page</h2>
+     <form action="" method=""post>
+    {{ form.hidden_tag()}}
+    <P>
+    {{form.username.label }}
+    {{form.username(size=32)}}
+    </P>
+    <P>
+    {{form.email.label }}
+    {{form.email(size=32)}}
+    </P>
+    <P>
+    {{form.password.label}}
+    {{form.password(size=32)}}
+    </P>
+    <P>
+    {{form.confirm_password.label}}
+    {{form.confirm_password(size=32)}}
+    </P>
+    <p>{{form.submit(class='btn btn-primary')}}</p>
+    </form>
+{% endblock%}
