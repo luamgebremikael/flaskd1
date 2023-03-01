@@ -2,22 +2,22 @@
 
 {%block content %}
     <h2>Register page</h2>
-     <form action="" method=""post>
+     <form action="" method="post"><br>
     {{ form.hidden_tag()}}
     <P>
-    {{form.username.label }}
+    {{form.username.label }}<br>
     {{form.username(size=32)}}
     </P>
     <P>
-    {{form.email.label }}
+    {{form.email.label }}<br>
     {{form.email(size=32)}}
     </P>
     <P>
-    {{form.password.label}}
+    {{form.password.label}}<br>
     {{form.password(size=32)}}
     </P>
     <P>
-    {{form.confirm_password.label}}
+    {{form.confirm_password.label}}<br>
     {{form.confirm_password(size=32)}}
     </P>
     <p>{{form.submit(class='btn btn-primary')}}</p>

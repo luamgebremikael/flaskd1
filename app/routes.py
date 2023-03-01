@@ -1,5 +1,7 @@
 from flask import render_template
-from app import app 
+from app import app
+from app.forms import RegisterForms
+
 
 
 @app.route('/')
@@ -19,9 +21,8 @@ def Login():
     return render_template('Login.jinja')  
 @app.route('/Register')  
 def Register():
-
-    
-    return render_template('Register.jinja')
+    form=RegisterForms()
+    return render_template('Register.jinja',form=form)
 @app.route('/About')    
 def About():
     return render_template('About.jinja') 
