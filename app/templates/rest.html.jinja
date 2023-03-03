@@ -1,14 +1,14 @@
 {% extends "base.jinja "%}
 {% block content %}
-    <h2> resturants</h2>
-    <h2> employers </h2>
-    {% for employer in cafe['employers']%}
-        <span>{{ employer}} </span>
+   
+    <h2> carlist </h2>
+    {% for carlist in car['carlist']%}
+        <span>{{ carlist }} </span>
 
     {% endfor %}
-    <h2>Tabels</h2>
-    {% for tabel in cafe['tabels'] %}
-        <p>{{tabels}} </p>
+    <h2>Brands</h2>
+     {% for Brand in car.Brands %}
+         <p>{{Brand}} </p>
 
     {% endfor %}
 {% endblock%}

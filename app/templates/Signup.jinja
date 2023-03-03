@@ -1,14 +1,21 @@
 {% extends 'base.jinja' %}
 
 {%block content %}
-    <h2>Register page</h2>
+    <h2>signup page</h2>
      <form action="" method="post"><br>
     {{ form.hidden_tag()}}
     <P>
     {{form.username.label }}<br>
     {{form.username(size=32)}}
     </P>
-    <P>
+        <P>
+    {{form.Firstname.label}}<br>
+    {{form.Firstname(size=32)}}
+    </P>   <P>
+    {{form.Lastname.label}}<br>
+    {{form.Lastname(size=32)}}
+    </P>
+     <P>
     {{form.email.label }}<br>
     {{form.email(size=32)}}
     </P>

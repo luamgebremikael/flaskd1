@@ -1,0 +1,28 @@
+{% extends 'base.jinja' %}
+
+{%block content %}
+    <h2>car page</h2>
+     <form action="" method="post"><br>
+    {{ form.hidden_tag()}}
+    <P>
+    {{form.make.label }}<br>
+    {{form.make(size=32)}}
+    </P>
+    <P>
+    {{form.model.label }}<br>
+    {{form.model(size=32)}}
+    </P>
+    <P>
+    {{form.year.label}}<br>
+    {{form.year(size=32)}}
+    </P>
+       <P>
+    {{form.color.label}}<br>
+    {{form.color(size=32)}}
+    </P>   <P>
+    {{form.price.label}}<br>
+    {{form.price(size=32)}}
+    </P>
+    <p>{{form.submit(class='btn btn-primary')}}</p>
+    </form>
+{% endblock%}
