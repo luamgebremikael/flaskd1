@@ -7,6 +7,9 @@
     <P>
     {{form.username.label }}<br>
     {{form.username(size=32)}}
+    {% for error in form.username.errors%}
+    <span>{{ error }}</span>
+    {% endfor %}
     </P>
         <P>
     {{form.Firstname.label}}<br>

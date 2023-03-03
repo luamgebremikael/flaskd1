@@ -21,7 +21,7 @@ def Login():
 @app.route('/signup',methods=['GET','POST'])  
 def signup():
     form=signupForms()
-    if form.validate_on_submit:
+    if form.validate_on_submit():
         flash(f'Request to signup{form.username}sucessfull!')
         
     return render_template('signup.jinja',form=form)
