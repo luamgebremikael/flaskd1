@@ -22,4 +22,4 @@ class carForms(FlaskForm):
     year= PasswordField('year',validators=[DataRequired()])
     color=StringField('color',validators=[DataRequired()])
     price= PasswordField('price',validators=[DataRequired(),EqualTo('password')])
-    submit=SubmitField('signup')
+    submit=SubmitField('submit')
