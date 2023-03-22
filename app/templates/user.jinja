@@ -1,0 +1,11 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+<h2>Welcome to {{ user.username }}'s Profile</h2>
+
+
+{% for post in posts %}
+    <p>{{ post.author.username }} says: {{ post.year }}, {{ post.make }}, {{ post.model }}, {{ post.color }}, {{ post.price }}, {{ post.description }}</p>
+
+{% endfor %}
+{% endblock %}

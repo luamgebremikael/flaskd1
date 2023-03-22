@@ -1,25 +1,31 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField,PasswordField,SubmitField
-from wtforms.validators import DataRequired,EqualTo
+from wtforms import StringField, PasswordField, SubmitField, TextAreaField, BooleanField
+from wtforms.validators import DataRequired, EqualTo, Email
 
-class signupForms(FlaskForm):
-    username= StringField('Username',validators=[DataRequired()])
-    email= StringField('email',validators=[DataRequired()])
-    password= PasswordField('Password',validators=[DataRequired()])
-    Firstname=StringField('Firstname',validators=[DataRequired()])
-    Lastname=StringField('Lastname',validators=[DataRequired()])
-    confirm_password= PasswordField('Confirm Password',validators=[DataRequired(),EqualTo('password')])
-    submit=SubmitField('signup')
+class RegisterForm(FlaskForm):
+    username = StringField('Username', validators= [DataRequired()])
+    email = StringField('Email', validators =[DataRequired(), Email()])
+    password = PasswordField('Password', validators= [DataRequired()])
+    confirm_password = PasswordField('Confirm Password', validators= [DataRequired(), EqualTo('password', message='Passwords must match!')])
+    first_name = StringField('First Name', validators=[DataRequired()])
+    last_name = StringField('Last Name', validators=[DataRequired()])
+    submit = SubmitField('Register')
 
-class LoginForms(FlaskForm):
-    email= StringField('email',validators=[DataRequired()]) 
-    password= PasswordField('Password',validators=[DataRequired()])  
-    submit=SubmitField('Login')
+class LoginInForm(FlaskForm):
+    username = StringField('Username', validators=[DataRequired()])
+    password = PasswordField('Password', validators=[DataRequired()])
+    remember_me= BooleanField('Remember Me')
+    submit = SubmitField('Sign In')
 
-class carForms(FlaskForm):
-    make= StringField('make',validators=[DataRequired()])
-    model= StringField('model',validators=[DataRequired()])
-    year= PasswordField('year',validators=[DataRequired()])
-    color=StringField('color',validators=[DataRequired()])
-    price= PasswordField('price',validators=[DataRequired(),EqualTo('password')])
-    submit=SubmitField('submit')
+class BlogForm(FlaskForm):
+    blogblock = TextAreaField('', validators=[DataRequired()])
+    submit = SubmitField('Submit Post')
+
+class CarForm(FlaskForm):
+    year = StringField('Year', validators=[DataRequired()])
+    make = StringField('Make', validators=[DataRequired()])
+    model = StringField('Model', validators=[DataRequired()])
+    color = StringField('Color', validators=[DataRequired()])
+    price = StringField('Price', validators=[DataRequired()])
+    description = TextAreaField('Description')
+    submit = SubmitField('Send Info')

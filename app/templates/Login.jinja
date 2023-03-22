@@ -1,23 +1,20 @@
-{% extends 'base.jinja' %}
+{% extends "base.jinja" %}
 
-{%block content %}
-    <h2>Login page</h2>
+{% block content %}
+<h2>Login</h2>
     <form action="" method="post">
-    {{ form.hidden_tag() }}
-    <p>
-    {{form.email.label}}<br>
-    {{form.email(size=32)  }}
-    </p>
-    <p>
-    {{form.password.label}}<br>
-    {{form.password(size=32) }}
-    </p>
-    <p>
-    {{form.submit(class='btn btn-primary') }}
-    
-    </p>
-    
-    
-    
+      {{  log_in_form.hidden_tag() }}
+      <p>
+      {{ log_in_form.username.label }}<br>
+      {{ log_in_form.username(size=32) }}
+      </p>
+      <p>
+      {{ log_in_form.password.label }}<br>
+      {{ log_in_form.password(size=32) }}
+      </p>
+      <p>{{ log_in_form.remember_me() }} {{ log_in_form.remember_me.label }}</p>
+      <p>
+      {{ log_in_form.submit(class='btn btn-primary') }}
+      </p>
     </form>
-{% endblock%}
+{% endblock %}
